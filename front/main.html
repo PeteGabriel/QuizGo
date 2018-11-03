@@ -1,0 +1,27 @@
+<html>
+
+<head>
+    <title>Fasttrack Quiz</title>
+    <link rel="stylesheet" type="text/css" href="./quiz.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container" id="app">
+        <form>
+          <div class="question" v-for="question in questions" :key="question.key">
+              <h2>{{question.content}}</h2>
+              <div v-for="(option, index) in question.options">
+                <input id="option" type="radio" :value="option" v-model="question.choice">
+                <label for="option">{{option}}</label>
+              </div>
+          </div>
+
+          <button type="submit" class="btn btn-success">Submit</button>
+        </form>
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>

@@ -49,12 +49,12 @@ func (a *App) initialize() {
 }
 
 func getQuiz(w http.ResponseWriter, r *http.Request) {
+	log.Println("GET ", r.RequestURI)
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)
 	if err := json.NewEncoder(w).Encode(questions); err != nil {
 		panic(err)
 	}
-
 }
 
 func saveResults(w http.ResponseWriter, r *http.Request) {
