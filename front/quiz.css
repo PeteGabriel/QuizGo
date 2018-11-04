@@ -2,3 +2,7 @@
 .question {
  margin-bottom: 20px
 }
+
+.disable{
+  display: none
+}
